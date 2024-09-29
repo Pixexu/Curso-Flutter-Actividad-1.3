@@ -1,6 +1,7 @@
 import 'package:activitat_1_3/app_styles.dart';
+import 'package:activitat_1_3/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 //==================================================
 class HomeScreen extends StatefulWidget {
@@ -23,16 +24,22 @@ class _HomeScreenState extends State<HomeScreen> {
           color: Colors.white,
         ),
         backgroundColor: const Color(0xFFF896D8),
+        centerTitle: true,
         title: Text(
           "Fitness Time",
-          style: AppStyles.textStyleAppBar(),
+          style: AppStyles.textStyleAppBarTitle(),
         ),
-        actions: const [
-          CircleAvatar(
-            backgroundImage: NetworkImage(
-              "https://randomuser.me/api/portraits/women/44.jpg",
+        actions: [
+          InkWell(
+            onTap: goProfile,
+            child: const CircleAvatar(
+              backgroundImage: NetworkImage(
+                "https://randomuser.me/api/portraits/women/44.jpg",
+              ),
+              radius: 20,
             ),
           ),
+          const SizedBox(width: 10),
         ],
       ),
       //==================================================
@@ -67,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 25),
               //==================================================
               Text(
-                "Darreres Activitats",
+                "Darreres activitats",
                 style: AppStyles.textStyleBodyTitleMedium(),
               ),
               //==================================================
@@ -92,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Text(
                             "Running",
-                            style: AppStyles.textStyleBody(),
+                            style: AppStyles.textStyleBodyActivitat(),
                           ),
                           Text(
                             "Ayer, 18:20",
@@ -129,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Text(
                             "Running",
-                            style: AppStyles.textStyleBody(),
+                            style: AppStyles.textStyleBodyActivitat(),
                           ),
                           Text(
                             "15 Sep 2024, 21:45",
@@ -167,7 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Text(
                             "Running",
-                            style: AppStyles.textStyleBody(),
+                            style: AppStyles.textStyleBodyActivitat(),
                           ),
                           Text(
                             "10 Sep 2024, 21:33",
@@ -184,7 +191,35 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-
+              //==================================================
+              const SizedBox(height: 25),
+              //==================================================
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CircularPercentIndicator(
+                    center: Text(
+                      "65%",
+                      style: AppStyles.textStyleBodyTitleMedium(),
+                    ),
+                    circularStrokeCap: CircularStrokeCap.round,
+                    lineWidth: 10,
+                    percent: 0.65,
+                    progressColor: const Color(0xFF3407DA),
+                    radius: 50,
+                  ),
+                ],
+              ),
+              //==================================================
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Objectiu mensual",
+                    style: AppStyles.textStyleBody(),
+                  ),
+                ],
+              ),
               //==================================================
             ],
           ),
@@ -207,6 +242,14 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
+    );
+  }
+
+  //==================================================
+  goProfile() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const ProfileScreen()),
     );
   }
 }

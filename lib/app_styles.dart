@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class AppStyles {
   //==================================================
-  static TextStyle textStyleAppBar() {
+  static TextStyle textStyleAppBarTitle() {
     return TextStyle(
       color: Colors.white,
       fontFamily: GoogleFonts.montserrat().fontFamily,
@@ -43,6 +43,16 @@ class AppStyles {
   }
 
   //==================================================
+  static TextStyle textStyleBodyActivitat() {
+    return TextStyle(
+      color: Colors.black,
+      fontFamily: GoogleFonts.montserrat().fontFamily,
+      fontSize: 18,
+      fontWeight: FontWeight.normal,
+    );
+  }
+
+  //==================================================
   static TextStyle textStyleBodyDatetime() {
     return TextStyle(
       color: Colors.black,
@@ -66,7 +76,8 @@ class AppStyles {
   //==================================================
   static TextStyle textStyleAnchor() {
     return TextStyle(
-      color: Colors.blue[600],
+      //color: Colors.blue[600],
+      color: const Color(0xFF3407DA),
       decoration: TextDecoration.underline,
       fontFamily: GoogleFonts.montserrat().fontFamily,
       fontSize: 14,
