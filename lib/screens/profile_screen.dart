@@ -163,7 +163,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     style: AppStyles.textStyleBody(),
                   ),
                   Slider(
-                    activeColor: Color(0xFFBF63F8),
+                    activeColor: const Color(0xFFBF63F8),
                     inactiveColor: Colors.grey,
                     value: 0.3,
                     onChanged: (value) {},
@@ -182,7 +182,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     style: AppStyles.textStyleBody(),
                   ),
                   Slider(
-                    activeColor: Color(0xFFBF63F8),
+                    activeColor: const Color(0xFFBF63F8),
                     inactiveColor: Colors.grey,
                     value: 0.2,
                     onChanged: (value) {},
