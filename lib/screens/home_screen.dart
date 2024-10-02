@@ -32,11 +32,14 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           InkWell(
             onTap: goProfile,
-            child: const CircleAvatar(
-              backgroundImage: NetworkImage(
-                "https://randomuser.me/api/portraits/women/44.jpg",
+            child: const Hero(
+              tag: "CircleAvatar",
+              child: CircleAvatar(
+                backgroundImage: NetworkImage(
+                  "https://randomuser.me/api/portraits/women/44.jpg",
+                ),
+                radius: 20,
               ),
-              radius: 20,
             ),
           ),
           const SizedBox(width: 10),
@@ -184,7 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       const Spacer(),
                       Text(
-                        "7,300 km",
+                        "7,100 km",
                         style: AppStyles.textStyleBodyDistance(),
                       ),
                     ],

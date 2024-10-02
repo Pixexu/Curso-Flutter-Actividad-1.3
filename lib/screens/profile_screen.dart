@@ -19,10 +19,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         backgroundColor: const Color(0xFFF896D8),
         centerTitle: true,
-        // leading: Icon(
-        //   Icons.arrow_back,
-        //   color: Colors.white,
-        // ),
+        leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
         title: Text(
           "Perfil",
           style: AppStyles.textStyleAppBarTitle(),
@@ -36,11 +40,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               //==================================================
-              const CircleAvatar(
-                backgroundImage: NetworkImage(
-                  "https://randomuser.me/api/portraits/women/44.jpg",
+              const Hero(
+                tag: "CircleAvatar",
+                child: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                    "https://randomuser.me/api/portraits/women/44.jpg",
+                  ),
+                  radius: 100,
                 ),
-                radius: 100,
               ),
               //==================================================
               const SizedBox(height: 10),
